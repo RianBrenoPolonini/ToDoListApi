@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class ApplicationController < ActionController::API
-  SECRET = ENV.fetch('SECRET_KEY_JWT')
+  SECRET = ENV.fetch('SECRET_KEY_JWT', '')
 
   def current_user
     access_token = request.headers['access-token']&.split&.last
