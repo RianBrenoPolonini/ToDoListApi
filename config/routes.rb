@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  resources :lists
   devise_for :users, skip: :all
 
   namespace :api do
@@ -13,6 +14,8 @@ Rails.application.routes.draw do
         patch '/', to: 'users#update'
         delete '/', to: 'users#destroy'
       end
+
+      resources :lists
 
       get '/is_authenticated', to: 'is_authenticated#index'
     end

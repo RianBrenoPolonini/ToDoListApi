@@ -8,5 +8,6 @@ class Ability
 
     can(:read, :is_authenticated)
     can(:manage, User, user: user)
+    can(:manage, List, user: user)
   end
 end
